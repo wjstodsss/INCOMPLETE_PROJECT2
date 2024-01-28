@@ -32,7 +32,7 @@ $(document).ready(function () {
     $(".prev2").css({zIndex:"10", height: "100%", display: "flex", alignItems:"center", backgroundColor:"#ddd", position: "absolute", left:"0", padding: "0 10px", cursor: "pointer" })
     $(".next2").css({zIndex:"10", height: "100%", display: "flex", alignItems:"center", backgroundColor:"#ddd", position: "absolute", right:"0", padding: "0 10px", cursor: "pointer"})
 
-
+// 링크는 각 제품별로 따로 넣야 하므로 현재 발생하는 카테고리 전환시 링크가 사라지는 버그는 후에 다시 고민 해 볼 것
     $.ajax({
         url: "./json/heavy.json",
         dataType: "json",
@@ -40,10 +40,10 @@ $(document).ready(function () {
             console.log(data)
             if (data.length > 0) {
                 for(let i = 0; i < data.length; i++){
-                    $(".wearSetSet>a>.wearSet").eq(i).append("<img src=" + data[i].src + " alt='product image' class='wearSetImg'>")
-                    $(".wearSetSet>a>.wearSet").eq(i).append("<p class='wearPreTitle'>" + data[i].preTitle + "</p>")
-                    $(".wearSetSet>a>.wearSet").eq(i).append("<p class='wearSetTitle'>" + data[i].title + "</p>")
-                    $(".wearSetSet>a>.wearSet").eq(i).append("<p class='wearPrice'>" + data[i].price + "</p>")
+                    $(".wearSet").eq(i).append("<img src=" + data[i].src + " alt='product image' class='wearSetImg'>")
+                    $(".wearSet").eq(i).append("<p class='wearPreTitle'>" + data[i].preTitle + "</p>")
+                    $(".wearSet").eq(i).append("<p class='wearSetTitle'>" + data[i].title + "</p>")
+                    $(".wearSet").eq(i).append("<p class='wearPrice'>" + data[i].price + "</p>")
                 }
                 $(".wearPreTitle").css({fontSize:"12px"})
                 $(".wearSetTitle").css({fontSize:"13px", color:"magenta"})
@@ -66,10 +66,10 @@ $(document).ready(function () {
                 console.log(data)
                 if (data.length > 0) {
                     for(let i = 0; i < data.length; i++){
-                        $(".wearSetSet>a>.wearSet").eq(i).append("<img src=" + data[i].src + " alt='product image' class='wearSetImg'>")
-                        $(".wearSetSet>a>.wearSet").eq(i).append("<p class='wearPreTitle'>" + data[i].preTitle + "</p>")
-                        $(".wearSetSet>a>.wearSet").eq(i).append("<p class='wearSetTitle'>" + data[i].title + "</p>")
-                        $(".wearSetSet>a>.wearSet").eq(i).append("<p class='wearPrice'>" + data[i].price + "</p>")
+                        $(".wearSet").eq(i).append("<img src=" + data[i].src + " alt='product image' class='wearSetImg'>")
+                        $(".wearSet").eq(i).append("<p class='wearPreTitle'>" + data[i].preTitle + "</p>")
+                        $(".wearSet").eq(i).append("<p class='wearSetTitle'>" + data[i].title + "</p>")
+                        $(".wearSet").eq(i).append("<p class='wearPrice'>" + data[i].price + "</p>")
                         
                     }
                     $(".wearPreTitle").css({fontSize:"12px"})
